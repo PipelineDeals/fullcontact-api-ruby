@@ -15,7 +15,7 @@ module FullContact
           options[:apiKey] = FullContact.options[:api_key]
         end
         request.url(formatted_path(path), options)
-        request.headers[FullContact::Configuration::AUTH_HEADER_NAME] = FullContact.options[:api_key]
+        # request.headers[FullContact::Configuration::AUTH_HEADER_NAME] = FullContact.options[:api_key]
       end
 
       raw ? response : response.body
