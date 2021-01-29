@@ -1,7 +1,6 @@
 module Faraday
   class Response::FullContactErrors < Response::Middleware
     def on_complete(env)
-      binding.pry
       case env[:status]
         when 400
           raise FullContact::BadRequest.new(error_message(env), env[:response_headers])
